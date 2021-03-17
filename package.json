@@ -1,0 +1,28 @@
+{
+  "name": "polygon-mask",
+  "version": "1.0.0",
+  "gizmos": {
+    "PolygonMask": "packages://polygon-mask/dist/polygon-mask/index.js"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.27.0",
+    "del-cli": "^3.0.1",
+    "typescript": "^4.1.2"
+  },
+  "scripts": {
+    "cleaan": "del-cli dist",
+    "build": "del-cli dist && ncc build src/polygon-mask.ts -m -o dist/polygon-mask"
+  },
+  "runtime-resource": {
+    "path": "./resources",
+    "name": "runtime"
+  },
+  "reload": {
+    "ignore": [
+      "resources/**/*"
+    ]
+  },
+  "dependencies": {
+    "@types/node": "^14.14.35"
+  }
+}
